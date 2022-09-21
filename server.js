@@ -5,6 +5,9 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
+app.use(cors());
+
+app.options("*", cors());
 
 app.get('/flights', (req, res) => {
         const options = {
